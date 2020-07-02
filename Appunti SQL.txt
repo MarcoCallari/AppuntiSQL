@@ -30,3 +30,28 @@ FROM nome_tabella
 ---WILDCARD---
 
 Per cercare sottostringhe nelle stringhe (wildcard): LIKE (Posizione 146.3)
+
+---DISTINCT---
+
+Evita ripetizioni nel risultato delle query.
+
+SELECT DISTINCT(nome_variabile1)
+
+---LIMIT---
+
+Mostra solo i primi N risultati.
+
+SELECT nome_variabile AS alias
+FROM nome_tabella
+WHERE nome_variabile (condizione)
+LIMIT N
+
+---ORDER BY---
+
+SELECT nome_variabile AS alias
+FROM nome_tabella
+WHERE nome_variabile (condizione)
+ORDER BY nome_variabile
+
+E' possibile aggiungere più variabili dopo il comando ORDER BY. Ad esempio, posso decidere di ordinare i miei risultati per cognome della persona e se ho due persone con lo stesso cognome ordinare il risultato in base al nome di queste due persone.
+Il comando ORDER BY dà la priorità alla prima delle due variabili definite nella query (ES: "ORDER BY cognome nome" ordina i risultati per cognome e nel caso di due o più persone con lo stesso cognome ordina in base al nome).

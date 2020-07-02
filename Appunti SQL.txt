@@ -1,0 +1,23 @@
+                                                                                                -----APPUNTI SQL-----
+
+---QUERY DI BASE---
+
+SELECT nome_variabile AS alias
+FROM nome_tabella
+WHERE nome_variabile (condizione)
+
+---OPERATORE IN---
+
+Utile per confrontare una variabile con una lista di possibili risultati
+
+SELECT nome_variabile
+FROM nome_tabella
+WHERE nome_variabile IN ('Primo valore','Secondo valore','Terzo valore')
+
+---OPERATORE CASE---
+
+Associa ad un valore
+
+---WILDCARD---
+
+Per cercare sottostringhe nelle stringhe (wildcard): LIKE (Posizione 146.3)

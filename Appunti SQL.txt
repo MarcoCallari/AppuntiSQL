@@ -55,3 +55,17 @@ ORDER BY nome_variabile
 
 E' possibile aggiungere più variabili dopo il comando ORDER BY. Ad esempio, posso decidere di ordinare i miei risultati per cognome della persona e se ho due persone con lo stesso cognome ordinare il risultato in base al nome di queste due persone.
 Il comando ORDER BY dà la priorità alla prima delle due variabili definite nella query (ES: "ORDER BY cognome nome" ordina i risultati per cognome e nel caso di due o più persone con lo stesso cognome ordina in base al nome).
+
+--Funzioni di aggregazione--
+Eseguono un calcolo su un set di valori e restituiscono un risultato.
+
+SELECT MAX(nome_variabile)
+SELECT MIN(nome_variabile)
+SELECT AVG(nome_variabile)
+SELECT SUM(nome_variabile)
+SELECT COUNT(nome_variabile)
+
+                                                                                               -----TEORIA DEGLI INSIEMI-----
+
+---UNION---
+Date due query, il comando UNION fornisce tutti i dati della prima query insieme a tutti i dati della seconda. Se non si desidera rimuovere i dati duplicati, usare il comando UNION ALL

@@ -16,7 +16,16 @@ WHERE nome_variabile IN ('Primo valore','Secondo valore','Terzo valore')
 
 ---OPERATORE CASE---
 
-Associa ad un valore
+Equivalente del paradigma switch-case presente in C/C++.
+
+SELECT nome_variabile1,nome_variabile2,
+       CASE
+            WHEN nome_variabile3 (condizione) THEN valore_associato_nome_variabile3
+            ELSE altro_valore_associato_nome_variabile3
+      END as alias_colonna
+FROM nome_tabella
+
+(Fare attenzione alla virgola dopo il nome dell'ultima variabile nel SELECT)
 
 ---WILDCARD---
 

@@ -1,4 +1,11 @@
                                                                                                 -----APPUNTI SQL-----
+---ORDINE OPERAZIONI---
+    FROM
+    WHERE
+    GROUP BY
+    HAVING
+    SELECT
+    ORDER BY
 
 ---QUERY DI BASE---
 
@@ -6,7 +13,8 @@ SELECT nome_variabile AS alias
 FROM nome_tabella
 WHERE nome_variabile (condizione)
 
-Nota:non è necessario inserire nel SELECT tutte le variabili su cui voglio eseguire operazioni
+Note: -Non è necessario inserire nel SELECT tutte le variabili su cui voglio eseguire operazioni
+      -É possibile svolgere operazioni aritmetiche sulle variabili da visualizzare nel SELECT
 
 ---OPERATORE IN---
 
@@ -18,7 +26,7 @@ WHERE nome_variabile IN ('Primo valore','Secondo valore','Terzo valore')
 
 ---OPERATORE CASE---
 
-Equivalente del paradigma switch-case presente in C/C++.
+Equivalente del paradigma switch-case presente in C/C++. Da usare nello statement SELECT.
 
 SELECT nome_variabile1,nome_variabile2,
        CASE
@@ -27,7 +35,7 @@ SELECT nome_variabile1,nome_variabile2,
       END as alias_colonna
 FROM nome_tabella
 
-(Fare attenzione alla virgola dopo il nome dell'ultima variabile nel SELECT)
+(Fare attenzione alla virgola dopo il nome dell ultima variabile nel SELECT)
 
 ---WILDCARD---
 
@@ -55,7 +63,7 @@ FROM nome_tabella
 WHERE nome_variabile (condizione)
 ORDER BY nome_variabile
 
-E' possibile aggiungere più variabili dopo il comando ORDER BY. Ad esempio, posso decidere di ordinare i miei risultati per cognome della persona e se ho due persone con lo stesso cognome ordinare il risultato in base al nome di queste due persone.
+É possibile aggiungere più variabili dopo il comando ORDER BY. Ad esempio, posso decidere di ordinare i miei risultati per cognome della persona e se ho due persone con lo stesso cognome ordinare il risultato in base al nome di queste due persone.
 Il comando ORDER BY dà la priorità alla prima delle due variabili definite nella query (ES: "ORDER BY cognome nome" ordina i risultati per cognome e nel caso di due o più persone con lo stesso cognome ordina in base al nome).
 
 --Funzioni di aggregazione--
@@ -78,18 +86,35 @@ GROUP BY nome_variabile,nome_variabile2
 Date due query, il comando UNION fornisce tutti i dati della prima query insieme a tutti i dati della seconda. Se non si desidera rimuovere i dati duplicati, usare il comando UNION ALL
 
 ---INNER JOIN---
-Restituisce l'insieme di due (o più) tabelle che condividono lo stesso valore di una variabile.
+Restituisce l insieme di due (o più) tabelle che condividono lo stesso valore di una variabile.
 SELECT a.nome_prima_variabile, b.nome_seconda_variabile
 FROM prima_tabella a JOIN seconda_tabella b
 ON a.nome_variabile_chiave = b.nome_variabile_chiave
 
-Nota: è possibile eseguire l'operazione di JOIN sulla stessa tabella.
+Nota: è possibile eseguire l operazione di JOIN sulla stessa tabella.
 
----LEFT OUTER  JOIN---
-Rende la condizione di JOIN opzionale.Da usare quando voglio una lista di tutti i valori , non solo quelli che soddisfano la condizione "ON".
+
+---OUTER JOIN---
+Rende la condizione di JOIN opzionale.
+
+---LEFT OUTER JOIN---
+Da usare quando voglio una lista di tutti i valori della tabella di "sinistra" (ovvero il primo argomento), non solo quelli che soddisfano la condizione "ON".
+
+---RIGHT OUTER JOIN---
+
+---FULL OUTER JOIN---
+
+---JOIN di più tabelle---
+TODO
 
                                                                                                 -----GESTIONE DELLE DATE-----
 
 ---Confrontare DATE con DATETIME---
 E' possibile eseguire il casting di un valore DATETIME in DATE,scartando ovviamente le informazioni sull'orario.
 CAST(variabile_data AS DATE)
+
+
+                                                                                                -----GESTIONE DELLE STRINGHE-----
+Ricordare che i varchar devono essere dichiarati con ' ' e non " "
+---Concatenare le stringhe---
+CONCAT(nome_variabile1,nome_variabile2,'Stringa1','Stringa2')

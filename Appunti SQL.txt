@@ -6,6 +6,8 @@ SELECT nome_variabile AS alias
 FROM nome_tabella
 WHERE nome_variabile (condizione)
 
+Nota:non è necessario inserire nel SELECT tutte le variabili su cui voglio eseguire operazioni
+
 ---OPERATORE IN---
 
 Utile per confrontare una variabile con una lista di possibili risultati
@@ -35,7 +37,7 @@ Per cercare sottostringhe nelle stringhe (wildcard): LIKE (Posizione 146.3)
 
 Evita ripetizioni nel risultato delle query.
 
-SELECT DISTINCT(nome_variabile1)
+SELECT DISTINCT nome_variabile1
 
 ---LIMIT---
 
@@ -65,7 +67,29 @@ SELECT AVG(nome_variabile)
 SELECT SUM(nome_variabile)
 SELECT COUNT(nome_variabile)
 
+Nota: è necessario raggruppare tutti le altre variabili selezionate tramite SELECT. Esempio:
+SELECT nome_variabile nome_variabile2 MAX(nome_variabile3)
+FROM nome_tabella
+GROUP BY nome_variabile,nome_variabile2
+
                                                                                                -----TEORIA DEGLI INSIEMI-----
 
 ---UNION---
 Date due query, il comando UNION fornisce tutti i dati della prima query insieme a tutti i dati della seconda. Se non si desidera rimuovere i dati duplicati, usare il comando UNION ALL
+
+---INNER JOIN---
+Restituisce l'insieme di due (o più) tabelle che condividono lo stesso valore di una variabile.
+SELECT a.nome_prima_variabile, b.nome_seconda_variabile
+FROM prima_tabella a JOIN seconda_tabella b
+ON a.nome_variabile_chiave = b.nome_variabile_chiave
+
+Nota: è possibile eseguire l'operazione di JOIN sulla stessa tabella.
+
+---LEFT OUTER  JOIN---
+Rende la condizione di JOIN opzionale.Da usare quando voglio una lista di tutti i valori , non solo quelli che soddisfano la condizione "ON".
+
+                                                                                                -----GESTIONE DELLE DATE-----
+
+---Confrontare DATE con DATETIME---
+E' possibile eseguire il casting di un valore DATETIME in DATE,scartando ovviamente le informazioni sull'orario.
+CAST(variabile_data AS DATE)

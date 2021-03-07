@@ -16,6 +16,10 @@ WHERE nome_variabile (condizione)
 Note: -Non è necessario inserire nel SELECT tutte le variabili su cui voglio eseguire operazioni
       -É possibile svolgere operazioni aritmetiche sulle variabili da visualizzare nel SELECT
 
+---SUBQUERY---
+
+Note: -Se voglio confrontare un valore all esterno della subquery, la subquery deve ritornare al massimo una riga o una colonna.L alternativa è effettuare il controllo all interno della subquery: è infatti possibile fare riferimento a delle variabili esterne ad essa.
+
 ---OPERATORE IN---
 
 Utile per confrontare una variabile con una lista di possibili risultati
@@ -110,7 +114,7 @@ TODO
                                                                                                 -----GESTIONE DELLE DATE-----
 
 ---Confrontare DATE con DATETIME---
-E' possibile eseguire il casting di un valore DATETIME in DATE,scartando ovviamente le informazioni sull'orario.
+É possibile eseguire il casting di un valore DATETIME in DATE,scartando ovviamente le informazioni sull orario.
 CAST(variabile_data AS DATE)
 
 
